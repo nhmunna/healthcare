@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile, onAuthStateChanged } from "firebase/auth";
 import initializeAuthentication from '../Firebase/firebase.init';
+import { useHistory, useLocation } from 'react-router';
 
 
 initializeAuthentication();
@@ -16,6 +17,11 @@ const useFirebase = () => {
     const [name, setName] = useState('');
     const [isLoading, setIsLoading] = useState(true);
 
+    // const location = useLocation();
+    // const history = useHistory();
+    // const redirect_uri = location.state?.from || "/home";
+    // console.log(location.state?.from);
+
 
     const auth = getAuth();
     const handleGoogleSignIn = () => {
@@ -25,15 +31,16 @@ const useFirebase = () => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 // The signed-in user info.
-                const { displayName, email, photoURL } = result.user;
-                const loggedToUser = {
-                    name: displayName,
-                    email: email,
-                    photo: photoURL
-                }
-                setUser(loggedToUser);
+                const user = result.user;
+                // const loggedToUser = {
+                //     name: displayName,
+                //     email: email,
+                //     photo: photoURL
+                // }
+                setUser(user);
                 // ...
                 console.log(user);
+                // history.push(redirect_uri);
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
@@ -99,6 +106,7 @@ const useFirebase = () => {
                 console.log(user);
                 setError('');
                 setUserName();
+                // history.push(redirect_uri);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -139,6 +147,7 @@ const useFirebase = () => {
                 setError('');
                 verifyEmail();
                 setUserName();
+                // history.push(redirect_uri);
             })
             .catch((error) => {
                 const errorCode = error.code;

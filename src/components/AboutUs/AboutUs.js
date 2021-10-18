@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <div id="about" className="container text-danger bg-light">
+        <div id="about" className="container text-danger bg-light shadow rounded-3">
             <h2>Healthcare.com</h2>
             <p>We are the most trusted <b>DIAGNOSTIC CENTER</b> in your town. We provide best treatment with low cost. Our motto is <b>"YOUR RESPONSIBILITY IS OUR."</b></p>
             <p>Address:</p>

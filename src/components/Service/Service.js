@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
     const { id, name, text, img, price } = service;
     return (
-        <div className="col-lg-6 service">
+        <div className="col-lg-6 shadow p-3 rounded-3 border border-dark">
             <img className="img-fluid" src={img} alt="" />
-            <h2>Service Name: {name}</h2>
+            <h2 className="text-primary">{name}</h2>
             <p>{text}</p>
-            <h5>Price:{price}</h5>
-            <Link to={`/details/${id}`}><Button className="btn btn-warning">Book {name.toLowerCase()}</Button></Link>
+            <h5 className="text-warning">Price:{price}</h5>
+            <Link to={`/details/${id}`}><Button className="btn btn-primary shadow">Book {name.toLowerCase()}</Button></Link>
         </div>
     );
 };

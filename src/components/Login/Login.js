@@ -1,6 +1,6 @@
 import React from 'react';
-// import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+// import useFirebase from '../../hooks/useFirebase';
 
 const Login = () => {
     const {
@@ -13,10 +13,10 @@ const Login = () => {
         handleRegistration,
         handleResetPassword,
         handleGoogleSignIn
-    } = useFirebase();
+    } = useAuth();
     return (
         <div className="mx-auto d-grid justify-content-md-center">
-            <form onSubmit={handleRegistration} className="mx-4 ">
+            <form onSubmit={handleRegistration} className="mx-4 p-3 rounded-3 shadow">
                 <h2 className="text-primary">Please {isLogIn ? 'Login' : 'Register'}</h2>
                 {!isLogIn && <div class="row mb-3">
                     <label for="inputAddress" className="col-sm-2 col-form-label">Name</label>
@@ -50,8 +50,10 @@ const Login = () => {
                 <button type="submit" className="btn btn-primary">{isLogIn ? 'Login' : 'Register'}</button>
                 <button onClick={handleResetPassword} type="button" className="btn btn-secondary btn-sm mx-4">Reset Password</button>
             </form>
-            <h2>Do you want to login with google?</h2>
-            <button onClick={handleGoogleSignIn} className="btn btn-warning">Google Sign In</button>
+            <div className="my-4 p-3 rounded-3 shadow">
+                <h2 className="text-primary">Do you want to login with google?</h2>
+                <button onClick={handleGoogleSignIn} className="btn btn-warning">Google Sign In</button>
+            </div>
         </div>
     );
 };

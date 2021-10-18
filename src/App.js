@@ -39,11 +39,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            {/* <PrivateRoute path="/booking/:serviceId">
-          </PrivateRoute> */}
             <Route path="*">
               <NotFound></NotFound>
-            </Route>v
+            </Route>
           </Switch>
         </BrowserRouter>
       </AuthProvider>

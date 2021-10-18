@@ -10,12 +10,12 @@ const Details = () => {
             .then(data => setService(data))
     }, []);
     return (
-        <div className="row my-1 g-5 justify-content-md-center">
-            <div className="col-lg-6">
+        <div className="row m-2 g-5 justify-content-md-center">
+            <div className="col-lg-6 border border-dark shadow rounded-3 p-3">
                 <img className="img-fluid" src={service.img} alt="" />
-                <h2>Service Name: {service.name}</h2>
+                <h2 className="text-info">{service.name}</h2>
                 <p>{service.text}</p>
-                <h5>Price:{service.price}</h5>
+                <h5 ><span className="text-warning bg-dark rounded-3 p-1 shadow">Price: {service.price}</span></h5>
             </div>
         </div>
     );
