@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile, onAuthStateChanged } from "firebase/auth";
 import initializeAuthentication from '../Firebase/firebase.init';
-import { useHistory, useLocation } from 'react-router';
+// import { useHistory, useLocation } from 'react-router';
 
 
 initializeAuthentication();
@@ -73,6 +73,8 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, [])
 
+
+    // sign out
     const handleSignOut = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
@@ -82,6 +84,7 @@ const useFirebase = () => {
         });
     };
 
+    // email login part
     const toggleLogin = e => {
         setIsLogIn(e.target.checked);
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router';
-import useFirebase from '../../hooks/useFirebase';
+// import useFirebase from '../../hooks/useFirebase';
 import useAuth from '../../hooks/useAuth';
 
 
