@@ -6,9 +6,9 @@ import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
-    // const { user, handleSignOut } = useAuth();
+    const { user, handleSignOut } = useAuth();
 
-    const { user, handleSignOut } = useFirebase();
+    // const { user, handleSignOut } = useFirebase();
     console.log(user)
     return (
         <>

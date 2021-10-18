@@ -2,12 +2,12 @@ import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router';
 import useFirebase from '../../hooks/useFirebase';
-// import useAuth from '../../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 
 
 const PrivateRoute = ({ children, ...rest }) => {
-    // const { users, isLoading } = useAuth();
-    const { user, isLoading } = useFirebase();
+    const { user, isLoading } = useAuth();
+    // const { user, isLoading } = useFirebase();
 
     if (isLoading) {
         return <Spinner animation="grow" variant="danger" />

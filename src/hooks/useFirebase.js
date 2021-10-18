@@ -98,6 +98,7 @@ const useFirebase = () => {
                 // ...
                 console.log(user);
                 setError('');
+                setUserName();
             })
             .catch((error) => {
                 const errorCode = error.code;
