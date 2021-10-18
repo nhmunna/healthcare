@@ -9,6 +9,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AboutUs from './components/AboutUs/AboutUs';
 import AuthProvider from './contexts/AuthProvider';
 import Doctor from './components/Doctors/Doctor';
+import Details from './components/Details/Details';
 
 function App() {
   return (
@@ -26,7 +27,10 @@ function App() {
             <PrivateRoute path="/services">
               <Services></Services>
             </PrivateRoute>
-            <PrivateRoute path="/doctor/:serviceId">
+            <PrivateRoute path="/details/:serviceId">
+              <Details></Details>
+            </PrivateRoute>
+            <PrivateRoute path="/doctor">
               <Doctor></Doctor>
             </PrivateRoute>
             <Route path="/about">

@@ -1,14 +1,29 @@
 import React from 'react';
-import { useParams } from 'react-router';
-import useServices from '../../hooks/useServices';
 
 const Doctor = () => {
-    const { serviceId } = useParams();
-    console.log(serviceId)
-    // const [service] = useServices([]);
+
     return (
-        <div>
-            <h2>this is your doctor.{serviceId}</h2>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col">
+                    {/* <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="..."/>
+                        <div class ="card-body">
+                        <h5 class ="card-title">Card title</h5>
+                        <p class ="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div> */}
+                </div>
+                <div class="col">
+                    {/* <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="..."/>
+                        <div class ="card-body">
+                        <h5 class ="card-title">Card title</h5>
+                        <p class ="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div> */}
+                </div>
+            </div>
         </div>
     );
 };
