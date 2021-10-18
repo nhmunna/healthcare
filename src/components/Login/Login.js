@@ -15,8 +15,8 @@ const Login = () => {
         handleGoogleSignIn
     } = useFirebase();
     return (
-        <div>
-            <form onSubmit={handleRegistration} className="mx-4">
+        <div className="mx-auto d-grid justify-content-md-center">
+            <form onSubmit={handleRegistration} className="mx-4 ">
                 <h2 className="text-primary">Please {isLogIn ? 'Login' : 'Register'}</h2>
                 {!isLogIn && <div class="row mb-3">
                     <label for="inputAddress" className="col-sm-2 col-form-label">Name</label>
